@@ -52,6 +52,8 @@ namespace GoogleCloudBot.Dialogs
             {
                 try
                 {
+                    //You don't need to pass credential when deploying to Compute Engine as it picks up the credential automatically.
+                    //Your code will look like this - var client = StorageClient.Create();
                     var credential = GoogleCredential.FromFile(@"PATHTOKEY.json");
                     var client = StorageClient.Create(credential);
                     Bucket bucket = null;
@@ -111,6 +113,8 @@ namespace GoogleCloudBot.Dialogs
                     await context.PostAsync("You should send an image file.");
                 else
                 {
+                    //You don't need to pass credential when deploying to Compute Engine as it picks up the credential automatically.
+                    //Your code will look like this - var client = StorageClient.Create();
                     var credential = GoogleCredential.FromFile(@"PATHTOKEY.json");
                     var client = StorageClient.Create(credential);
                     Bucket bucket = null;
